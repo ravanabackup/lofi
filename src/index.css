@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #0c0a16;
+}
+
+/* Custom seek-bar styling using a --pct fill variable. */
+.lofi-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #c084fc 0%,
+    #e879f9 var(--pct, 0%),
+    rgba(255, 255, 255, 0.1) var(--pct, 0%),
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+.lofi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #d946ef;
+  box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.2);
+  cursor: pointer;
+}
+
+.lofi-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #d946ef;
+  box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.2);
+  cursor: pointer;
+}
+
+.lofi-range:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Thin custom scrollbar for the station list. */
+.lofi-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.lofi-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.lofi-scroll::-webkit-scrollbar-thumb {
+  background: rgba(168, 139, 250, 0.3);
+  border-radius: 9999px;
+}
+.lofi-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 139, 250, 0.5);
+}
